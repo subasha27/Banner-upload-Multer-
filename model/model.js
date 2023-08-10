@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const joi = require("@hapi/joi")
 
 const bannerschema = new mongoose.Schema({
     name:{
@@ -28,18 +27,9 @@ const bannerschema = new mongoose.Schema({
       }
 });
 
-const reqSchema = joi.object({
-    name: joi.string().required(),
-    link: joi.string().uri(),
-    status: joi.string(),
-    desktopImage: joi.string(),
-    mobileImage: joi.string(),
-})
-
 
 const Banner = mongoose.model("Banner",bannerschema);
 
 module.exports={
     Banner,
-    reqSchema,
 }

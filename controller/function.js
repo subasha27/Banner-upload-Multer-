@@ -1,7 +1,8 @@
-const { Banner , reqSchema } = require("../model/model")
+const { Banner } = require("../model/model")
 const multer =  require("multer");
 const path = require('path');
 const joi = require("@hapi/joi");
+const reqSchema = require('../validation/validate')
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
